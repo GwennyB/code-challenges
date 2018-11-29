@@ -126,7 +126,7 @@ function Meeting(dayOfWeek, start, end) {
   this.start = start;
   this.end = end;
 }
-const meetings = [
+var meetings = [
   new Meeting('Monday', '0900', '1000'),
   new Meeting('Wednesday', '1300', '1500'),
   new Meeting('Tuesday', '1145', '1315'),
@@ -135,8 +135,12 @@ const meetings = [
   new Meeting('Friday', '1200', '1345'),
 ];
 
-const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+var sortMeetingsByDay = (arr) => {
+  const days = ['Monday','Tuesday','Wednesday','Thursday','Friday'];
+  arr.sort( (a,b) => {
+    return days.indexOf(a.dayOfWeek).toString().localeCompare(days.indexOf(b.dayOfWeek).toString());
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -149,8 +153,18 @@ Sort the meetings in the order that they start. If two meetings start at the sam
 You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
-const sortSchedule = (arr) => {
-  // Solution code here...
+var sortSchedule = (arr) => {
+  const days = ['Monday','Tuesday','Wednesday','Thursday','Friday'];
+  arr.sort( (a,b) => {
+    if (a.dayOfWeek === b.dayOfWeek && a.start === b.start) {
+      return a.end.localeCompare(b.end);
+    } else if (a.dayOfWeek === b.dayOfWeek) {
+      return a.start.localeCompare(b.start);
+    } else {
+      return days.indexOf(a.dayOfWeek).toString().localeCompare(days.indexOf(b.dayOfWeek).toString());
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
