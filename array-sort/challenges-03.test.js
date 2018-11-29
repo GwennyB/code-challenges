@@ -85,7 +85,7 @@ const people = [
   new Person('Stan', 'Seattle', 67),
 ];
 
-const sortPeople = (arr) => {
+var sortPeople = (arr) => {
   arr.sort( (a,b) => a.lastName.toUpperCase().localeCompare(b.lastName.toUpperCase()) );
   return arr;
 };
@@ -100,8 +100,17 @@ If two people share the same last name, alphabetize on their first name.
 If two people have the same full name, the younger one should come first. Do not worry about capitalization.
 ------------------------------------------------------------------------------------------------ */
 
-const sortPeopleBetter = (arr) => {
-  // Solution code here...
+var sortPeopleBetter = (arr) => {
+  arr.sort( (a,b) => {
+    if (a.lastName === b.lastName && a.firstName === b.firstName) {
+      return a.age.toString().localeCompare(b.age.toString());
+    } else if (a.lastName === b.lastName) {
+      return a.firstName.toUpperCase().localeCompare(b.firstName.toUpperCase());
+    } else {
+      return a.lastName.toUpperCase().localeCompare(b.lastName.toUpperCase());
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
