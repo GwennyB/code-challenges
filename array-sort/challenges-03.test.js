@@ -36,7 +36,7 @@ Write a function named alphabetizeBetter that takes in an array of strings and r
 For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
 ------------------------------------------------------------------------------------------------ */
 
-var alphabetizeBetter = (arr) => {
+const alphabetizeBetter = (arr) => {
   arr.sort( (a,b) => {
     if(a.toLowerCase()<b.toLowerCase()) {
       return -1;
@@ -72,9 +72,8 @@ Write a function named sortNumbersByLength that takes in an array of numbers and
 For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
-const sortNumbersByLength = (arr) => {
-  // Solution code here...
-};
+const sortNumbersByLength = (arr) => arr.sort( (a,b) => a.toString().length-b.toString().length);
+
 
 /*-----------------------------------------------------------------------------------------------
 CHALLENGE 7
