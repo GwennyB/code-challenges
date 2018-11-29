@@ -6,7 +6,7 @@ CHALLENGE 1
 Write a function named sortBackwards that takes in an array of numbers and returns the same array, with the numbers sorted, highest to smallest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortBackwards = (arr) => arr.sort( (a,b) => b-a);
+const sortBackwards = (arr) => arr.sort( (a,b) => b-a );
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -26,9 +26,7 @@ CHALLENGE 3
 Write a function named sortByLength that takes in an array of strings and returns the same array, with the strings sorted by their length, lowest to highest.
 ------------------------------------------------------------------------------------------------ */
 
-const sortByLength = (arr) => {
-  // Solution code here...
-};
+const sortByLength = (arr) => arr.sort( (a,b) => a.length-b.length );
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
