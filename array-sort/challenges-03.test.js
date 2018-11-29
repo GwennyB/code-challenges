@@ -36,8 +36,17 @@ Write a function named alphabetizeBetter that takes in an array of strings and r
 For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, and so is ['alphabet', 'Alphabet', 'carrot', 'Zebra'].
 ------------------------------------------------------------------------------------------------ */
 
-const alphabetizeBetter = (arr) => {
-  // Solution code here...
+var alphabetizeBetter = (arr) => {
+  arr.sort( (a,b) => {
+    if(a.toLowerCase()<b.toLowerCase()) {
+      return -1;
+    } else if (a.toLowerCase()>b.toLowerCase()) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
