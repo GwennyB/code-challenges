@@ -12,7 +12,7 @@ For example:
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
 
-const isNum = (input) => {
+var isNum = (input) => {
   var regex = /[0-9]/;
   return regex.test(input);
 };
@@ -26,8 +26,8 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  var regex = /([A-Z][a-z]*)/;
-  return regex.test(str);
+  var regex = /([A-Z][a-z]*)/g;
+  return str.match(regex);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -59,8 +59,9 @@ If the user enters any of these four inputs, return true. For any other input, r
 Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
-const matchMonth = (input) => {
-  // Solution code here...
+var matchMonth = (input) => {
+  let regex = /[Oo](ct)(ober)?/;
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
