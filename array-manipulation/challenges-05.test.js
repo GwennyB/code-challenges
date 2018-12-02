@@ -68,7 +68,7 @@ var gruffaloCrumble = {
     'Spread the crisp evenly over the gruffalo mixture',
     'Bake for 12-15 hours',
   ]
-}
+};
 
 
 const listFoods = (recipe) => {
@@ -87,7 +87,7 @@ const listFoods = (recipe) => {
     result.push(thisIng);
   });
   return result;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -101,7 +101,7 @@ const splitFoods = (recipe) => {
   let result = [];
   recipe.ingredients.forEach(element => result.push(element.split(' ').slice(2).join(' ')) );
   return result;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -117,7 +117,7 @@ const stepActions = (recipe) => {
   let result = [];
   recipe.steps.forEach( element => result.push(element.split(' ')[0]) )
   return result;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -133,14 +133,11 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  let evens = [];
-  arr.forEach ( (element,index) => {
-    if( element%2 === 0 ) {
-      evens.push(index);
+  for (var index = 0; index < arr.length; index++) {
+    if( arr[index]%2 === 0 ) {
+      arr.splice(index,1);
+      index--;
     }
-  });
-  for (var i = evens.length-1; i>=0; i--) {
-    arr.splice(evens[i],1);
   }
 };
 
@@ -184,7 +181,18 @@ For example, removeVowels('gregor') returns 'grgr'.
 ------------------------------------------------------------------------------------------------ */
 
 const removeVowels = (str) => {
-  // Solution code here...
+  let vowels = ['a','e','i','o','u'];
+  let splitStr = str.split('');
+  for (var letter = 0; letter<splitStr.length; letter++) {
+    for (var vowel in vowels) {
+      if(splitStr[letter] === vowels[vowel]) {
+        splitStr.splice(letter,1);
+        letter--;
+        break;
+      }
+    }
+  }
+  return splitStr.join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
