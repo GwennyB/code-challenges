@@ -133,7 +133,15 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  let evens = [];
+  arr.forEach ( (element,index) => {
+    if( element%2 === 0 ) {
+      evens.push(index);
+    }
+  });
+  for (var i = evens.length-1; i>=0; i--) {
+    arr.splice(evens[i],1);
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
