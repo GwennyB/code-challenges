@@ -175,9 +175,20 @@ const deceasedSpouses = ['Catelyn', 'Lysa', 'Robert', 'Khal Drogo', 'Alerie'];
 
 const houseSurvivors = (arr) => {
   const survivors = [];
-  // Solution code here...
+  arr.forEach(element => {
+    let thisHouse = {
+      house: element.house,
+      members: 1
+    };
+    let houseStat = Object.values(element);
+    if(houseStat[1] && !deceasedSpouses.includes(houseStat[1])) {
+      thisHouse.members++;
+    }
+    thisHouse.members += houseStat[2].length;
+    survivors.push(thisHouse);
+  });
   return survivors;
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
