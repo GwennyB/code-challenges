@@ -116,8 +116,17 @@ The input and output of this function are the same as the input and output from 
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenEntries = (arr, character) => {
-  // Solution code here...
-}
+  let answer = false;
+  arr.forEach(element => {
+    if (element.name === character) {
+      console.log('Object.entries(element)[2]',Object.values(element)[2]);
+      if (Object.entries(element)[2][1].length > 0) {
+        answer = true;
+      }
+    }
+  });
+  return answer;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
