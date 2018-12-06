@@ -95,7 +95,7 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+  return arr.filter( snorlax => snorlax.baseStat > minBaseStat);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,7 +107,8 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  let filteredArr = arr.filter( snorlax => snorlax.baseStat > minBaseStat);
+  return filteredArr.map ( snorlax => snorlax.stat.name);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,9 +160,7 @@ const characters = [
   },
 ];
 
-const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
-};
+const getCharactersWithoutChildren = (arr) => arr.filter( character => !character.children);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -172,7 +171,8 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  let filteredArr = arr.filter( element => typeof element === 'number');
+  return filteredArr.map( element => element%2===0 ? 'even' : 'odd');
 };
 
 /* ------------------------------------------------------------------------------------------------
