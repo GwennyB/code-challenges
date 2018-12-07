@@ -9,7 +9,7 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  return arr.reduce( (acc, val,idx) => acc + 1);
+  return arr.reduce( (acc) => acc + 1);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +69,11 @@ let starWarsData = [{
 }]
 
 const returnNames = (arr) => {
-  // Solution code here...
+  let answer = arr.reduce((names, character) => {
+    names.push(character.name);
+    return names;
+  }, []);
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -245,7 +249,7 @@ describe('Testing challenge 1', () => {
 
 describe('Testing challenge 2', () => {
   test('It should return an array continaing the names of the characters', () => {
-    expect(returnNames(starWarsData)).toStrictEqual([ 'Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa' ]);
+    expect(returnNames(starWarsData)).toStrictEqual(['Luke Skywalker','C-3PO','R2-D2','Darth Vader','Leia Organa']);
     expect(returnNames(starWarsData).length).toStrictEqual(5);
   });
 });
