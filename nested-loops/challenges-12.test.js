@@ -170,8 +170,12 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
-}
+  let averages = [];
+  weather.forEach(week => {
+    averages.push((week.reduce((acc,val) => acc+val ,0)/week.length));
+  });
+  return averages.reduce((acc,val) => acc<val ? acc : val , 9999);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
@@ -186,8 +190,12 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  // Solution code here...
-}
+  let answer = [];
+  str.split('\n').forEach( arr => {
+    answer.push(arr.split(',').reduce( (acc,val) => acc+parseInt(val) ,0));
+  });
+  return answer;
+};
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
