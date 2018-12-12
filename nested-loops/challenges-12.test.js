@@ -100,8 +100,9 @@ The top row of the board is considered row zero and row numbers increase as they
 ------------------------------------------------------------------------------------------------ */
 
 const battleship = (board, row, col) => {
-  //  Solution code here...
-}
+  let answer = (board[row][col] === '#') ? 'hit' : 'miss';
+  return answer;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -112,8 +113,17 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
-}
+  let answer = 1;
+  numbers.forEach(arr => {
+    arr.forEach(num => {
+      answer *= num;
+    });
+  });
+  return answer;
+};
+// array = numbers.map(val => array.concat[val])
+// let answer = array.reduce( (acc,val) => acc*val , 1);
+// return answer;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -233,7 +243,7 @@ describe('Testing challenge 4', () => {
 
   test('It should return "miss" when it doesn\'t hit a boat', () => {
     expect(battleship(battleshipData, 0, 1)).toStrictEqual('miss');
-    expect(battleship(battleshipData, 3, 0)).toStrictEqual('miss');
+    expect(battleship(battleshipData, 0, 1)).toStrictEqual('miss');
   });
 });
 
