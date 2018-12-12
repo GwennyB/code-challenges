@@ -121,9 +121,7 @@ const calculateProduct = (numbers) => {
   });
   return answer;
 };
-// array = numbers.map(val => array.concat[val])
-// let answer = array.reduce( (acc,val) => acc*val , 1);
-// return answer;
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -142,8 +140,17 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
-}
+  let sum = 0;
+  let lengths = 0;
+  weather.forEach(arr => {
+    lengths += arr.length;
+    arr.forEach(num => {
+      sum += num;
+    });
+  });
+  return sum/lengths;
+};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7
