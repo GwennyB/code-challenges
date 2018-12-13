@@ -67,7 +67,8 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  let mapped = arr.map(val => val.includes(':)'));
+  return mapped.includes(false) ? false : true;
 };
 
 /* ------------------------------------------------------------------------------------------------
