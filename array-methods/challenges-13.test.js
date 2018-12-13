@@ -169,7 +169,11 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
 const characterByIndex = (arr) => {
-  // Solution code here...
+  let answer = [];
+  for (var str in arr) {
+    answer.push(arr[str].charAt(parseInt(str)));
+  }
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
