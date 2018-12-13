@@ -147,7 +147,17 @@ For example, ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thurs
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const sortByDay = (arr) => {
-  // Solution code here...
+  let answer = [];
+  for (var day in daysOfWeek) {
+    let today = [];
+    for (var event of arr) {
+      if(event.includes(daysOfWeek[day])) {
+        today.push(event);
+      }
+    }
+    answer.push(today);
+  }
+  return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
