@@ -87,8 +87,11 @@ let starWarsData = [{
 }]
 
 let biggerThanLuke = (arr) => {
-  // Solution code here...
-}
+  let characters = arr.filter(val => parseInt(val.mass) > parseInt(arr[0].mass));
+  let answers = [];
+  characters.map( (val) => answers.push(val.name));
+  return answers.join(' - ');
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
